@@ -31,7 +31,6 @@ public class PanText extends JPanel {
                 if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                     String s = textInput.getText();
                     if (s.equals(sch)) {
-                        // Sultans of Swing
                         PanResult.Correct();
                     } else {
                         PanResult.lblResult.setText("Incorrect!");
