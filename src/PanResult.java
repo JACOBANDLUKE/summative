@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -9,6 +10,7 @@ public class PanResult extends JPanel {
     public static int nCorrect = 0;
 
     public PanResult() {
+        setBackground(Color.WHITE);
         setLayout(new FlowLayout());
         add(lblResult);
         add(lblCount);

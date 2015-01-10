@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -5,24 +6,14 @@ import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author kestreL
- */
 public class PanText extends JPanel {
 
     public static JLabel lblChar = new JLabel();
-
     public static Random rand = new Random();
     public static String sch;
 
     public PanText() {
-        lettergen();
+        chargen();
         setLayout(new FlowLayout());
         TextInput textInput = new TextInput();
         textInput.addKeyListener(new KeyAdapter() {
@@ -35,18 +26,26 @@ public class PanText extends JPanel {
                     } else {
                         PanResult.lblResult.setText("Incorrect!");
                     }
-                    lettergen();
+                    chargen();
                     textInput.setText("");
                 }
             }
         });
+        setBackground(Color.WHITE);
         add(textInput);
         add(lblChar);
     }
 
-    public static void lettergen() {
-        char c = (char) (rand.nextInt(26) + 'a');
-        sch = Character.toString(c);
-        lblChar.setText(sch);
+    public static void chargen() {
+        Random rand = new Random();
+        int nSelect = rand.nextInt(1);
+        if (nSelect == 0) {
+            char c = (char) (rand.nextInt(26) + 'a');
+            sch = Character.toString(c);
+            lblChar.setText(sch);
+        } else {
+            int nNum = rand.nextInt(9);
+            lblChar.setText(Integer.toString(nNum));
+        }
     }
 }
