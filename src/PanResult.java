@@ -17,7 +17,7 @@ public class PanResult extends JPanel {
     }
 
     public static void Correct() {
-        lblResult.setText("Correct!");
+        lblResult.setText("Correct");
         nCorrect++;
         lblCount.setText(Integer.toString(PanResult.nCorrect));
     }

@@ -15,7 +15,7 @@ public class PanText extends JPanel {
     public PanText() {
         chargen();
         setLayout(new FlowLayout());
-        TextInput textInput = new TextInput();
+        final TextInput textInput = new TextInput();
         textInput.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent evt) {
@@ -24,7 +24,7 @@ public class PanText extends JPanel {
                     if (s.equals(sch)) {
                         PanResult.Correct();
                     } else {
-                        PanResult.lblResult.setText("Incorrect!");
+                        PanResult.lblResult.setText("WRONG");
                     }
                     chargen();
                     textInput.setText("");

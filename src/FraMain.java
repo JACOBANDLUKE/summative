@@ -10,7 +10,7 @@ public class FraMain extends JFrame {
         PanText panText = new PanText();
         setLayout(new BorderLayout());
         setTitle("Type Check");
-        setSize(538, 538);
+        setSize(600, 400);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(panResult, BorderLayout.SOUTH);
